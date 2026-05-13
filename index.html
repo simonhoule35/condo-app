@@ -19,6 +19,7 @@ select{border:1px solid #30363d;border-radius:8px;padding:8px 10px;background:#1
 #stage img{width:100%;height:auto;display:block}
 #layer{position:absolute;top:0;left:0;width:100%;height:100%;container-type:inline-size}
 .obj{position:absolute;display:flex;align-items:center;justify-content:center;font-weight:500;cursor:pointer;user-select:none}
+@media(max-width:600px){.obj{min-width:32px;min-height:32px;font-size:clamp(10px,2.5cqw,14px)!important}}
 .zone,.box{border-radius:12px}.pill{border-radius:999px;padding:6px 14px}
 .dot,.photo,.note,.num{border-radius:50%}.callout{border-radius:10px;padding:6px 10px}
 .line,.dash,.arrow,.darrow{transform-origin:left center;padding:0}
