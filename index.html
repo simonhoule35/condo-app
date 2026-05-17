@@ -8,24 +8,17 @@ body{font-family:DM Mono,monospace;background:#0d1117;color:#e6edf3;min-height:1
 .app{max-width:1002px;margin:0 auto;background:#111827;min-height:100vh}
 .hdr{position:sticky;top:0;z-index:100;background:#020617;border-bottom:1px solid #30363d;padding:12px 16px;display:flex;align-items:center;gap:10px}
 .hdr h1{font-family:Syne,sans-serif;font-size:18px;font-weight:800;color:#58a6ff;margin-right:auto}
-.hb{border:1px solid #30363d;border-radius:8px;padding:8px 14px;font-family:DM Mono,monospace;font-size:12px;cursor:pointer;background:#1c2333;color:#e6edf3}
-.hb:active{opacity:.7}
+.hb{border:1px solid #30363d;border-radius:8px;padding:8px 14px;font-family:DM Mono,monospace;font-size:12px;cursor:pointer;background:#1c2333;color:#e6edf3}.hb:active{opacity:.7}
 .panel{padding:12px 16px;border-bottom:1px solid #30363d}
 select{border:1px solid #30363d;border-radius:8px;padding:8px 10px;background:#161b22;color:#e6edf3;font-family:DM Mono,monospace;font-size:12px;width:100%}
-.st{font-size:12px;color:#58a6ff;margin-top:8px}
-.sw{padding:12px 16px;overflow:hidden}
+.st{font-size:12px;color:#58a6ff;margin-top:8px}.sw{padding:12px 16px;overflow:hidden}
 #stagewrap{width:100%;overflow:hidden}
 #stage{position:relative;width:1002px;display:inline-block;background:#1e293b;border-radius:12px;overflow:hidden;transform-origin:top left}
 #stage img{width:100%;height:auto;display:block}
 #layer{position:absolute;top:0;left:0;width:100%;height:100%;container-type:inline-size}
-.obj{position:absolute;display:flex;align-items:center;justify-content:center;font-weight:500;cursor:pointer;user-select:none}
-@media(max-width:600px){.obj{min-width:32px;min-height:32px;font-size:clamp(10px,2.5cqw,14px)!important}}
+.obj{position:absolute;display:flex;align-items:center;justify-content:center;font-weight:500;cursor:pointer;user-select:none;overflow:visible}
 .zone,.box{border-radius:12px}.pill{border-radius:999px;padding:6px 14px}
 .dot,.photo,.note,.num{border-radius:50%}.callout{border-radius:10px;padding:6px 10px}
-.line,.dash,.arrow,.darrow{transform-origin:left center;padding:0}
-.dash{background:transparent!important}
-.arrow::after,.darrow::after{content:'';position:absolute;right:-1px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:10px solid currentColor}
-.darrow::before{content:'';position:absolute;left:-1px;top:50%;transform:translateY(-50%) rotate(180deg);width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:10px solid currentColor}
 .mbg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:2000;align-items:flex-end;justify-content:center}
 .mbg.on{display:flex}
 .mo{width:100%;max-width:600px;background:#161b22;border:1px solid #30363d;border-radius:20px 20px 0 0;overflow:hidden;max-height:88vh;display:flex;flex-direction:column}
@@ -34,207 +27,137 @@ select{border:1px solid #30363d;border-radius:8px;padding:8px 10px;background:#1
 .mh-close{background:#1c2333;border:1px solid #30363d;border-radius:8px;padding:7px 14px;color:#e6edf3;cursor:pointer;font-size:13px;font-family:DM Mono,monospace}
 .mb{padding:16px 20px;overflow-y:auto;flex:1}
 .syncbar{padding:8px 20px;background:#0a1f12;border-top:1px solid #1a3a24;font-size:11px;color:#3fb950;display:flex;align-items:center;gap:8px;flex-shrink:0}
-.sdot{width:7px;height:7px;border-radius:50%;background:#3fb950;flex-shrink:0;transition:background .2s}
-.sdot.saving{background:#d29922}.sdot.error{background:#f85149}
+.sdot{width:7px;height:7px;border-radius:50%;background:#3fb950;flex-shrink:0;transition:background .2s}.sdot.saving{background:#d29922}.sdot.error{background:#f85149}
 .fcard{border:1px solid #30363d;border-radius:12px;padding:14px;margin-bottom:12px;background:#0d1117}
 .fcard-lbl{font-size:10px;color:#8b949e;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;display:flex;align-items:center;gap:6px}
 .fcard-icon{font-size:15px}.fcard-req{color:#f85149}
 .finput{width:100%;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px 12px;color:#e6edf3;font-family:DM Mono,monospace;font-size:15px;outline:none;transition:border-color .15s}
-.finput:focus{border-color:#58a6ff}
-textarea.finput{min-height:90px;resize:vertical}
+.finput:focus{border-color:#58a6ff}textarea.finput{min-height:90px;resize:vertical}
 .funit{font-size:11px;color:#58a6ff;margin-top:5px}
-.fphoto{display:block;width:100%;max-height:260px;object-fit:cover;border-radius:10px;border:1px solid #30363d;margin-top:10px}
-.flink{color:#58a6ff;word-break:break-all;font-size:13px;display:block;margin-top:6px;text-decoration:none}
-.flink:hover{text-decoration:underline}
-.cam-btn{width:100%;background:#1c2333;border:2px dashed #30363d;border-radius:10px;padding:16px;color:#8b949e;font-family:DM Mono,monospace;font-size:13px;cursor:pointer;text-align:center;margin-top:6px;transition:border-color .2s,color .2s}
-.cam-btn:hover{border-color:#58a6ff;color:#58a6ff}
-.cam-btn:active{opacity:.7}
-.uploading{color:#d29922;border-color:#d29922;pointer-events:none}
-#offbar{display:none;background:#7a3a00;color:#fbbf24;font-size:12px;text-align:center;padding:7px;position:sticky;top:52px;z-index:99}
-#offbar.on{display:block}
-#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#161b22;border:1px solid #30363d;border-radius:10px;padding:10px 20px;font-size:12px;color:#8b949e;z-index:9999;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}
-#toast.on{opacity:1}
+.cam-btn{width:100%;background:#1c2333;border:2px dashed #30363d;border-radius:10px;padding:14px;color:#8b949e;font-family:DM Mono,monospace;font-size:13px;cursor:pointer;text-align:center;margin-top:6px}.cam-btn:active{opacity:.7}.uploading{color:#d29922;border-color:#d29922;pointer-events:none}
+/* gallery grid */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:10px}
+.gallery-item{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:1;background:#161b22;border:1px solid #30363d}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-del{position:absolute;top:4px;right:4px;background:rgba(0,0,0,.7);border:0;border-radius:6px;color:#f85149;font-size:14px;width:24px;height:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+.flink{color:#58a6ff;word-break:break-all;font-size:13px;display:block;margin-top:6px;text-decoration:none}.flink:hover{text-decoration:underline}
+#offbar{display:none;background:#7a3a00;color:#fbbf24;font-size:12px;text-align:center;padding:7px;position:sticky;top:52px;z-index:99}#offbar.on{display:block}
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#161b22;border:1px solid #30363d;border-radius:10px;padding:10px 20px;font-size:12px;color:#8b949e;z-index:9999;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}#toast.on{opacity:1}
 </style></head><body>
 <div class="app">
-  <div class="hdr"><h1 id="ptitle">Condo</h1><button class="hb" id="backbtn" style="display:none">← Main</button></div>
-  <div id="offbar">⚠️ Hors ligne — les changements seront synchronisés à la reconnexion</div>
-  <div class="panel"><select id="psel"></select><div class="st" id="st"></div></div>
-  <div class="sw"><div id="stagewrap"><div id="stage"><img id="pimg" src=""><div id="layer"></div></div></div></div>
+<div class="hdr"><h1 id="ptitle">Condo</h1><button class="hb" id="backbtn" style="display:none">← Main</button></div>
+<div id="offbar">⚠️ Hors ligne</div>
+<div class="panel"><select id="psel"></select><div class="st" id="st"></div></div>
+<div class="sw"><div id="stagewrap"><div id="stage"><img id="pimg" src=""><div id="layer"></div></div></div></div>
 </div>
-<div class="mbg" id="mbg">
-  <div class="mo">
-    <div class="mh"><span class="mh-title" id="mt"></span><button class="mh-close" id="mclose">✕ Fermer</button></div>
-    <div class="mb" id="mb"></div>
-    <div class="syncbar"><div class="sdot" id="sdot"></div><span id="slbl">Synchronisé</span></div>
-  </div>
-</div>
+<div class="mbg" id="mbg"><div class="mo"><div class="mh"><span class="mh-title" id="mt"></span><button class="mh-close" id="mclose">✕ Fermer</button></div><div class="mb" id="mb"></div><div class="syncbar"><div class="sdot" id="sdot"></div><span id="slbl">Synchronisé</span></div></div></div>
 <div id="toast"></div>
 <script type="module">
 import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import{getDatabase,ref,set,get}from"https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-const firebaseConfig={apiKey:"AIzaSyD2knNbFuEW-m5pXcAJK7Hpdl9ebmkJW10",authDomain:"condo-app-56391.firebaseapp.com",databaseURL:"https://condo-app-56391-default-rtdb.firebaseio.com",projectId:"condo-app-56391",storageBucket:"condo-app-56391.firebasestorage.app",messagingSenderId:"228389808496",appId:"1:228389808496:web:39a07f52251b2df1b107b5"};
-const fbapp=initializeApp(firebaseConfig);
-const db=getDatabase(fbapp);
-
-const CLOUDINARY_CLOUD='dppuyrnhv';
-const CLOUDINARY_PRESET='ebs9b1cc';
-
-var D={"pages":[{"id":"main","name":"Main plan","image":"main.png","objects":[{"id":"obj_1","label":"Chambre","type":"zone","targetPage":"chambre","left":"10.326%","top":"22.830%","width":"32.517%","height":"31.452%","locked":false,"hidden":false,"style":{"fill":"#08770a","text":"#000000","border":"#116600","opacity":1,"font":3.5,"radius":10,"rotate":0,"z":1,"ff":"inherit"},"fields":[]},{"id":"obj_3","label":"Balcon","type":"zone","targetPage":"balcon","left":"38.880%","top":"7.775%","width":"34.324%","height":"15.912%","locked":false,"hidden":false,"style":{"fill":"#2563eb","text":"#000000","border":"#60a5fa","opacity":1,"font":3.5,"radius":10,"rotate":0,"z":3,"ff":"inherit"},"fields":[]},{"id":"obj_4","label":"Salon","type":"zone","targetPage":"salon","left":"41.799%","top":"23.382%","width":"30.310%","height":"24.313%","locked":false,"hidden":false,"style":{"fill":"#ff6600","text":"#000000","border":"#862809","opacity":1,"font":3.5,"radius":10,"rotate":0,"z":3,"ff":"inherit"},"fields":[]},{"id":"obj_5","label":"Salle à manger","type":"zone","targetPage":"sam","left":"42.657%","top":"46.126%","width":"28.409%","height":"18.344%","locked":false,"hidden":false,"style":{"fill":"#8b5cf6","text":"#000000","border":"#8b5cf6","opacity":1,"font":3,"radius":10,"rotate":0,"z":4,"ff":"inherit"},"fields":[]},{"id":"obj_6","label":"Salle de bain","type":"zone","targetPage":"sb","left":"12.150%","top":"47.901%","width":"30.019%","height":"20.061%","locked":false,"hidden":false,"style":{"fill":"#ff3d3d","text":"#000000","border":"#61d7ff","opacity":1,"font":3,"radius":10,"rotate":0,"z":5,"ff":"inherit"},"fields":[]},{"id":"obj_7","label":"Cuisine","type":"zone","targetPage":"cuisine","left":"44.605%","top":"64.069%","width":"46.097%","height":"27.785%","locked":false,"hidden":false,"style":{"fill":"#ffdd80","text":"#000000","border":"#948000","opacity":1,"font":3.3,"radius":10,"rotate":0,"z":6,"ff":"inherit"},"fields":[]},{"id":"obj_8","label":"A1","type":"pill","targetPage":"","left":"16.499%","top":"24.625%","width":"3.333%","height":"2.375%","locked":false,"hidden":false,"style":{"fill":"#2563eb","text":"#ffffff","border":"#60a5fa","opacity":1,"font":1.5,"ff":"inherit","radius":999,"rotate":0,"z":7},"fields":[{"id":"obj_9","label":"Largeur","type":"dimension","value":"","ui":{"icon":"↔","unit":"po","placeholder":"ex: 36 po"}},{"id":"obj_10","label":"Notes","type":"note","value":"","ui":{"icon":"📝","placeholder":"Observations...","multiline":true}},{"id":"obj_11","label":"Photo","type":"photo","value":"","ui":{"icon":"📷","placeholder":"Prendre une photo..."}}]}]},{"id":"chambre","name":"Chambre","image":"chambre.png","objects":[]},{"id":"salon","name":"Salon","image":"salon.png","objects":[]},{"id":"cuisine","name":"Cuisine","image":"cuisine.png","objects":[]},{"id":"sam","name":"Salle à manger","image":"s-a-m.png","objects":[]},{"id":"sb","name":"Salle de bain","image":"s-b.png","objects":[]},{"id":"balcon","name":"Balcon","image":"balcon.png","objects":[]}]};
-
+import{getDatabase,ref,set,get,push,remove}from"https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+var FC={apiKey:"AIzaSyD2knNbFuEW-m5pXcAJK7Hpdl9ebmkJW10",authDomain:"condo-app-56391.firebaseapp.com",databaseURL:"https://condo-app-56391-default-rtdb.firebaseio.com",projectId:"condo-app-56391",storageBucket:"condo-app-56391.firebasestorage.app",messagingSenderId:"228389808496",appId:"1:228389808496:web:39a07f52251b2df1b107b5"};
+var fbapp=initializeApp(FC);var db=getDatabase(fbapp);
+var CLOUD="dppuyrnhv",PRESET="ebs9b1cc";
+var D={"pages":[{"id":"main","name":"Main plan","image":"images/main.png","objects":[{"id":"obj_1","label":"Chambre","type":"zone","targetPage":"chambre","left":"9.876%","top":"22.203%","width":"33.223%","height":"31.548%","locked":false,"hidden":false,"style":{"fill":"#08770a","text":"#000000","border":"#23a981","opacity":1,"font":3.5,"radius":10,"rotate":0,"z":1,"fontFamily":"'DM Mono',monospace","ff":"inherit"},"fields":[],"targetObj":""},{"id":"obj_3","label":"Balcon","type":"zone","targetPage":"balcon","left":"38.880%","top":"7.775%","width":"34.324%","height":"15.912%","locked":false,"hidden":false,"style":{"fill":"#2563eb","text":"#000000","border":"#60a5fa","opacity":1,"font":3.5,"radius":10,"rotate":0,"z":3,"fontFamily":"'DM Mono',monospace","ff":"inherit"},"fields":[],"targetObj":""},{"id":"obj_4","label":"Salon","type":"zone","targetPage":"salon","left":"41.799%","top":"23.382%","width":"30.310%","height":"24.313%","locked":false,"hidden":false,"style":{"fill":"#ff6600","text":"#000000","border":"#862809","opacity":1,"font":3.5,"radius":10,"rotate":0,"z":3,"fontFamily":"'DM Mono',monospace","ff":"inherit"},"fields":[],"targetObj":""},{"id":"obj_5","label":"Salle à manger","type":"zone","targetPage":"sam","left":"42.657%","top":"46.126%","width":"28.409%","height":"18.344%","locked":false,"hidden":false,"style":{"fill":"#8b5cf6","text":"#000000","border":"#8b5cf6","opacity":1,"font":3,"radius":10,"rotate":0,"z":4,"fontFamily":"'DM Mono',monospace","ff":"inherit"},"fields":[],"targetObj":""},{"id":"obj_6","label":"Salle de bain","type":"zone","targetPage":"sb","left":"12.150%","top":"47.901%","width":"30.019%","height":"20.061%","locked":false,"hidden":false,"style":{"fill":"#ff3d3d","text":"#000000","border":"#61d7ff","opacity":1,"font":3,"radius":10,"rotate":0,"z":5,"fontFamily":"'DM Mono',monospace","ff":"inherit"},"fields":[],"targetObj":""},{"id":"obj_7","label":"Cuisine","type":"zone","targetPage":"cuisine","left":"44.605%","top":"64.069%","width":"46.097%","height":"27.785%","locked":false,"hidden":false,"style":{"fill":"#ffdd80","text":"#000000","border":"#948000","opacity":1,"font":3.3,"radius":10,"rotate":0,"z":6,"fontFamily":"'DM Mono',monospace","ff":"inherit"},"fields":[],"targetObj":""}]},{"id":"chambre","name":"Chambre","image":"images/chambre.png","objects":[{"id":"obj_18","label":"A2","type":"pill","targetPage":"","left":"62.582%","top":"12.685%","width":"8.750%","height":"6.938%","locked":false,"hidden":false,"style":{"fill":"#0f7033","text":"#ffffff","border":"#005c22","opacity":1,"font":4,"ff":"inherit","radius":999,"rotate":0,"z":2},"fields":[{"id":"obj_15","label":"Largeur","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#00e04f"}},{"id":"obj_19","label":"Hauteur","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#009419"}},{"id":"obj_20","label":"Notes :","type":"note","value":"","ui":{"placeholder":"","icon":"📝","unit":"","required":false,"readonly":false,"multiline":true,"display":"card","photoMode":"link","accent":"#58a6ff"}},{"id":"obj_21","label":"Photos :","type":"photo","value":"","ui":{"placeholder":"","icon":"📷","unit":"","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#58a6ff"}}],"targetObj":""},{"id":"obj_22","label":"A1","type":"pill","targetPage":"","left":"16.747%","top":"12.872%","width":"8.750%","height":"6.938%","locked":false,"hidden":false,"style":{"fill":"#0f7033","text":"#ffffff","border":"#005c22","opacity":1,"font":4,"ff":"inherit","radius":999,"rotate":0,"z":3},"fields":[{"id":"obj_15","label":"Largeur","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#00e04f"}},{"id":"obj_19","label":"Hauteur","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#009419"}},{"id":"obj_20","label":"Notes :","type":"note","value":"","ui":{"placeholder":"","icon":"📝","unit":"","required":false,"readonly":false,"multiline":true,"display":"card","photoMode":"link","accent":"#58a6ff"}},{"id":"obj_21","label":"Photos :","type":"photo","value":"","ui":{"placeholder":"","icon":"📷","unit":"","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#58a6ff"}}],"targetObj":""},{"id":"obj_23","label":"B1","type":"pill","targetPage":"","left":"83.774%","top":"35.330%","width":"8.750%","height":"6.938%","locked":false,"hidden":false,"style":{"fill":"#0f7033","text":"#ffffff","border":"#005c22","opacity":1,"font":4,"ff":"inherit","radius":999,"rotate":0,"z":3},"fields":[{"id":"obj_15","label":"Largeur","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#00e04f"}},{"id":"obj_19","label":"Hauteur","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#009419"}},{"id":"obj_20","label":"Notes :","type":"note","value":"","ui":{"placeholder":"","icon":"📝","unit":"","required":false,"readonly":false,"multiline":true,"display":"card","photoMode":"link","accent":"#58a6ff"}},{"id":"obj_21","label":"Photos :","type":"photo","value":"","ui":{"placeholder":"","icon":"📷","unit":"","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#58a6ff"}}],"targetObj":""},{"id":"obj_24","label":"C1","type":"pill","targetPage":"","left":"57.301%","top":"70.768%","width":"8.750%","height":"6.938%","locked":false,"hidden":false,"style":{"fill":"#0f7033","text":"#ffffff","border":"#005c22","opacity":1,"font":4,"ff":"inherit","radius":999,"rotate":0,"z":4},"fields":[{"id":"obj_15","label":"Largeur","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#00e04f"}},{"id":"obj_19","label":"Hauteur","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#009419"}},{"id":"obj_20","label":"Notes :","type":"note","value":"","ui":{"placeholder":"","icon":"📝","unit":"","required":false,"readonly":false,"multiline":true,"display":"card","photoMode":"link","accent":"#58a6ff"}},{"id":"obj_21","label":"Photos :","type":"photo","value":"","ui":{"placeholder":"","icon":"📷","unit":"","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#58a6ff"}}],"targetObj":""},{"id":"obj_25","label":"D1","type":"pill","targetPage":"","left":"7.077%","top":"40.474%","width":"8.750%","height":"6.938%","locked":false,"hidden":false,"style":{"fill":"#0f7033","text":"#ffffff","border":"#005c22","opacity":1,"font":4,"ff":"inherit","radius":999,"rotate":0,"z":5},"fields":[{"id":"obj_15","label":"Largeur","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#00e04f"}},{"id":"obj_19","label":"Hauteur","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#009419"}},{"id":"obj_20","label":"Notes :","type":"note","value":"","ui":{"placeholder":"","icon":"📝","unit":"","required":false,"readonly":false,"multiline":true,"display":"card","photoMode":"link","accent":"#58a6ff"}},{"id":"obj_21","label":"Photos :","type":"photo","value":"","ui":{"placeholder":"","icon":"📷","unit":"","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#58a6ff"}}],"targetObj":""},{"id":"obj_27","label":"GR1","type":"pill","targetPage":"","left":"30.832%","top":"81.516%","width":"9.282%","height":"5.264%","locked":false,"hidden":false,"style":{"fill":"#005c0b","text":"#ffffff","border":"#050f00","opacity":1,"font":3.5,"ff":"inherit","radius":999,"rotate":0,"z":6},"fields":[{"id":"obj_28","label":"Largeur :","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#0ce208"}},{"id":"obj_37","label":"Profondeur","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#018e03"}},{"id":"obj_38","label":"Notes : ","type":"note","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#0a8e01"}},{"id":"obj_39","label":"Photo :","type":"photo","value":"","ui":{"placeholder":"","icon":"📷","unit":"","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#58a6ff"}}],"targetObj":""},{"id":"obj_29","label":"W1","type":"pill","targetPage":"","left":"41.783%","top":"10.534%","width":"6.904%","height":"5.088%","locked":false,"hidden":false,"style":{"fill":"#2c5f25","text":"#ffffff","border":"#079241","opacity":1,"font":4,"ff":"inherit","radius":999,"rotate":0,"z":7},"fields":[{"id":"obj_30","label":"Largeur","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":true,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#00ff40"}},{"id":"obj_31","label":"Hauteur","type":"dimension","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":true,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#00db1a"}},{"id":"obj_32","label":"Notes : ","type":"note","value":"","ui":{"placeholder":"","icon":"↔","unit":"in","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"link","accent":"#008a02"}},{"id":"obj_33","label":"Photo :","type":"photo","value":"","ui":{"placeholder":"","icon":"📷","unit":"","required":false,"readonly":false,"multiline":false,"display":"card","photoMode":"thumbnail","accent":"#009411"}}],"targetObj":""},{"id":"obj_35","label":"GR1","type":"vdasha","targetPage":"","targetObj":"","left":"11.665%","top":"77.109%","width":"3.299%","height":"12.733%","locked":false,"hidden":false,"style":{"fill":"#007029","text":"#ffffff","border":"#049f3d","opacity":1,"font":14,"ff":"inherit","radius":3,"rotate":0,"z":8},"fields":[]},{"id":"obj_37","label":"","type":"darrow","targetPage":"","targetObj":"","left":"33.488%","top":"52.431%","width":"27.221%","height":"8.813%","locked":false,"hidden":false,"style":{"fill":"#2563eb","text":"#ffffff","border":"#60a5fa","opacity":1,"font":14,"ff":"inherit","radius":5,"rotate":0,"z":9},"fields":[]}]},{"id":"salon","name":"Salon","image":"images/salon.png","objects":[]},{"id":"cuisine","name":"Cuisine","image":"images/cuisine.png","objects":[]},{"id":"sam","name":"Salle à manger","image":"images/s-a-m.png","objects":[]},{"id":"sb","name":"Salle de bain","image":"images/s-b.png","objects":[]},{"id":"balcon","name":"Balcon","image":"images/balcon.png","objects":[]}]};
 var cid=D.pages[0].id;var pending={};
 function G(i){return document.getElementById(i);}
-function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-function rgba(hex,a){var c=String(hex||'#2563eb').replace('#','');return'rgba('+parseInt(c.slice(0,2),16)+','+parseInt(c.slice(2,4),16)+','+parseInt(c.slice(4,6),16)+','+a+')';}
-function toast(msg){var t=G('toast');t.textContent=msg;t.classList.add('on');clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('on');},2500);}
-function sync(state,msg){var dot=G('sdot'),lbl=G('slbl');dot.className='sdot'+(state==='saving'?' saving':state==='error'?' error':'');lbl.textContent=msg||'Synchronisé';}
-function fbPath(p,o,f){return'condo/'+p+'/'+o+'/'+f;}
-function saveField(pageId,objId,fieldId,value){sync('saving','Sauvegarde...');var path=fbPath(pageId,objId,fieldId);set(ref(db,path),value).then(function(){sync('ok','Synchronisé ✓');}).catch(function(){sync('error','Hors ligne');pending[path]=value;});}
-function loadObj(pageId,objId,cb){get(ref(db,'condo/'+pageId+'/'+objId)).then(function(snap){cb(snap.exists()?snap.val():{});}).catch(function(){cb({});});}
-window.addEventListener('online',function(){G('offbar').classList.remove('on');Object.keys(pending).forEach(function(path){set(ref(db,path),pending[path]).then(function(){delete pending[path];});});toast('Reconnecté — synchronisation...');});
-window.addEventListener('offline',function(){G('offbar').classList.add('on');});
-
-async function uploadToCloudinary(file,onProgress){
-  var fd=new FormData();
-  fd.append('file',file);
-  fd.append('upload_preset',CLOUDINARY_PRESET);
-  var res=await fetch('https://api.cloudinary.com/v1_1/'+CLOUDINARY_CLOUD+'/image/upload',{method:'POST',body:fd});
-  if(!res.ok)throw new Error('Upload failed');
-  var data=await res.json();
-  return data.secure_url;
-}
-
-function norm(o){if(!o.style)o.style={};if(!Array.isArray(o.fields))o.fields=[];if(o.style.fontFamily&&!o.style.ff)o.style.ff=o.style.fontFamily;o.style.fill=o.style.fill||'#2563eb';o.style.text=o.style.text||'#fff';o.style.border=o.style.border||'#60a5fa';if(o.style.opacity==null)o.style.opacity=1;if(o.style.font==null)o.style.font=14;o.style.ff=o.style.ff||'inherit';if(o.style.radius==null)o.style.radius=10;if(o.style.rotate==null)o.style.rotate=0;if(o.style.z==null)o.style.z=1;if(!o.width)o.width='20%';if(!o.height)o.height='15%';o.targetPage=o.targetPage||'';}
-function styleEl(el,o){if(o.type==='zone'){el.style.background=rgba(o.style.fill,.22);el.style.color=o.style.text;el.style.border='2px solid '+o.style.border;el.style.borderRadius=o.style.radius+'px';el.textContent=o.label;}else if(o.type==='pill'){el.style.background=o.style.fill;el.style.color=o.style.text;el.style.border='2px solid '+o.style.border;el.style.borderRadius=o.style.radius+'px';el.textContent=o.label;}else if(o.type==='txt'){el.style.color=o.style.text;el.textContent=o.label;}else if(o.type==='box'){el.style.background=rgba(o.style.fill,.18);el.style.color=o.style.text;el.style.border='2px solid '+o.style.border;el.style.borderRadius=o.style.radius+'px';el.textContent=o.label;}else if(o.type==='callout'){el.style.background=o.style.fill;el.style.color=o.style.text;el.style.border='2px solid '+o.style.border;el.style.borderRadius='10px';el.style.boxShadow='4px 4px 0 '+o.style.border;el.textContent=o.label;}else if(o.type==='dot'||o.type==='photo'||o.type==='note'||o.type==='num'){el.style.background=o.style.fill;el.style.color=o.style.text;el.style.border='2px solid '+o.style.border;el.style.borderRadius='50%';el.textContent=o.label;}else if(o.type==='line'){el.style.background=o.style.border;}else if(o.type==='dash'){el.style.background='transparent';el.style.borderTop='2px dashed '+o.style.border;}else if(o.type==='arrow'||o.type==='darrow'){el.style.background=o.style.border;el.style.color=o.style.border;}}
-function scaleStage(){var wrap=G('stagewrap'),stage=G('stage');var scale=wrap.offsetWidth/1002;stage.style.transform='scale('+scale+')';stage.style.width='1002px';wrap.style.height=(stage.offsetHeight*scale)+'px';}
+function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':'&quot;'}[c];});}
+function rgba(hex,a){var c=String(hex||"#2563eb").replace("#","");return"rgba("+parseInt(c.slice(0,2),16)+","+parseInt(c.slice(2,4),16)+","+parseInt(c.slice(4,6),16)+","+a+")";}
+function toast(msg){var t=G("toast");t.textContent=msg;t.classList.add("on");clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove("on");},2500);}
+function sync(s,m){var d=G("sdot"),l=G("slbl");d.className="sdot"+(s==="saving"?" saving":s==="error"?" error":"");l.textContent=m||"Synchronisé";}
+function saveField(pg,oi,fi,v){sync("saving","Sauvegarde...");var path="condo/"+pg+"/"+oi+"/"+fi;set(ref(db,path),v).then(function(){sync("ok","Synchronisé ✓");}).catch(function(){sync("error","Hors ligne");pending[path]=v;});}
+function loadObj(pg,oi,cb){get(ref(db,"condo/"+pg+"/"+oi)).then(function(s){cb(s.exists()?s.val():{});}).catch(function(){cb({});});}
+window.addEventListener("online",function(){G("offbar").classList.remove("on");Object.keys(pending).forEach(function(p){set(ref(db,p),pending[p]).then(function(){delete pending[p];});});toast("Reconnecté");});
+window.addEventListener("offline",function(){G("offbar").classList.add("on");});
+async function uploadPhoto(file){var fd=new FormData();fd.append("file",file);fd.append("upload_preset",PRESET);var r=await fetch("https://api.cloudinary.com/v1_1/"+CLOUD+"/image/upload",{method:"POST",body:fd});if(!r.ok)throw new Error("fail");return(await r.json()).secure_url;}
+function isLineType(t){return["line","vline","arrow","varrow","darrow","dvarrow","dash","vdash","dasha","vdasha"].indexOf(t)>=0;}
+function isVertical(t){return["vline","varrow","dvarrow","vdash","vdasha"].indexOf(t)>=0;}
+function hasTailArrow(t){return["darrow","dvarrow"].indexOf(t)>=0;}
+function isDashed(t){return["dash","vdash","dasha","vdasha"].indexOf(t)>=0;}
+function hasArrow(t){return["arrow","varrow","darrow","dvarrow","dasha","vdasha"].indexOf(t)>=0;}
+function norm(o){if(!o.style)o.style={};if(!Array.isArray(o.fields))o.fields=[];if(o.style.fontFamily&&!o.style.ff)o.style.ff=o.style.fontFamily;o.style.fill=o.style.fill||"#2563eb";o.style.text=o.style.text||"#fff";o.style.border=o.style.border||"#60a5fa";if(o.style.opacity==null)o.style.opacity=1;if(o.style.font==null)o.style.font=14;o.style.ff=o.style.ff||"inherit";if(o.style.radius==null)o.style.radius=isLineType(o.type)?2:10;if(o.style.rotate==null)o.style.rotate=0;if(o.style.z==null)o.style.z=1;if(!o.width)o.width=isVertical(o.type)?"0.8%":isLineType(o.type)?"20%":"20%";if(!o.height)o.height=isVertical(o.type)?"20%":isLineType(o.type)?"0.8%":"15%";o.targetPage=o.targetPage||"";o.targetObj=o.targetObj||"";}
+function styleEl(el,o){var t=o.type;var col=o.style.border;var thick=Math.max(1,o.style.radius||2);el.innerHTML="";if(t==="zone"){el.style.background=rgba(o.style.fill,.22);el.style.color=o.style.text;el.style.border="2px solid "+col;el.style.borderRadius="10px";el.textContent=o.label;}else if(t==="pill"){el.style.background=o.style.fill;el.style.color=o.style.text;el.style.border="2px solid "+col;el.style.borderRadius="999px";el.textContent=o.label;}else if(t==="txt"){el.style.color=o.style.text;el.textContent=o.label;}else if(t==="box"){el.style.background=rgba(o.style.fill,.18);el.style.color=o.style.text;el.style.border="2px solid "+col;el.style.borderRadius="10px";el.textContent=o.label;}else if(t==="callout"){el.style.background=o.style.fill;el.style.color=o.style.text;el.style.border="2px solid "+col;el.style.borderRadius="10px";el.style.boxShadow="4px 4px 0 "+col;el.textContent=o.label;}else if(t==="dot"||t==="photo"||t==="note"||t==="num"){el.style.background=o.style.fill;el.style.color=o.style.text;el.style.border="2px solid "+col;el.style.borderRadius="50%";el.textContent=o.label;}else if(isLineType(t)){var vert=isVertical(t);var dashed=isDashed(t);var arrowEnd=hasArrow(t);var arrowStart=hasTailArrow(t);var svg=document.createElementNS("http://www.w3.org/2000/svg","svg");svg.style.cssText="position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible";var defs=document.createElementNS("http://www.w3.org/2000/svg","defs");if(arrowEnd){var mE=document.createElementNS("http://www.w3.org/2000/svg","marker");mE.setAttribute("id","ae_"+o.id);mE.setAttribute("markerWidth","8");mE.setAttribute("markerHeight","8");mE.setAttribute("refX","6");mE.setAttribute("refY","3");mE.setAttribute("orient","auto");var pE=document.createElementNS("http://www.w3.org/2000/svg","path");pE.setAttribute("d","M0,0 L0,6 L8,3 z");pE.setAttribute("fill",col);mE.appendChild(pE);defs.appendChild(mE);}if(arrowStart){var mS=document.createElementNS("http://www.w3.org/2000/svg","marker");mS.setAttribute("id","as_"+o.id);mS.setAttribute("markerWidth","8");mS.setAttribute("markerHeight","8");mS.setAttribute("refX","2");mS.setAttribute("refY","3");mS.setAttribute("orient","auto");var pS=document.createElementNS("http://www.w3.org/2000/svg","path");pS.setAttribute("d","M8,0 L8,6 L0,3 z");pS.setAttribute("fill",col);mS.appendChild(pS);defs.appendChild(mS);}svg.appendChild(defs);var line=document.createElementNS("http://www.w3.org/2000/svg","line");if(vert){line.setAttribute("x1","50%");line.setAttribute("y1","0");line.setAttribute("x2","50%");line.setAttribute("y2","100%");}else{line.setAttribute("x1","0");line.setAttribute("y1","50%");line.setAttribute("x2","100%");line.setAttribute("y2","50%");}line.setAttribute("stroke",col);line.setAttribute("stroke-width",thick);if(dashed)line.setAttribute("stroke-dasharray",(thick*4)+" "+(thick*3));if(arrowEnd)line.setAttribute("marker-end","url(#ae_"+o.id+")");if(arrowStart)line.setAttribute("marker-start","url(#as_"+o.id+")");svg.appendChild(line);el.appendChild(svg);el.style.background="transparent";el.style.border="none";}}
+function scaleStage(){var w=G("stagewrap"),s=G("stage");var sc=w.offsetWidth/1002;s.style.transform="scale("+sc+")";s.style.width="1002px";w.style.height=(s.offsetHeight*sc)+"px";}
 function pg(){return D.pages.find(function(p){return p.id===cid;})||D.pages[0];}
-function renderPg(){var p=pg();G('ptitle').textContent=p.name;G('st').textContent=p.name;G('backbtn').style.display=p.id==='main'?'none':'';var layer=G('layer');layer.innerHTML='';(p.objects||[]).slice().sort(function(a,b){return(+((a.style||{}).z)||0)-(+((b.style||{}).z)||0);}).forEach(function(o){norm(o);if(o.hidden)return;var el=document.createElement('div');el.className='obj '+o.type;el.style.left=o.left;el.style.top=o.top;el.style.width=o.width;el.style.height=o.height;el.style.opacity=o.style.opacity;el.style.fontSize=o.style.font+'cqw';el.style.fontFamily=o.style.ff||'inherit';el.style.zIndex=o.style.z;el.style.transform='rotate('+(o.style.rotate||0)+'deg)';el.style.transformOrigin='left center';styleEl(el,o);el.onclick=function(){if(o.type==='zone'&&o.targetPage)goTo(o.targetPage);else openMod(o);};layer.appendChild(el);});var img=G('pimg');img.onload=scaleStage;img.src=p.image||'';if(img.complete&&img.naturalHeight>0)scaleStage();}
-function goTo(id){cid=id;G('psel').value=id;history.replaceState(null,'','?page='+id);renderPg();}
-
+function renderPg(){var p=pg();G("ptitle").textContent=p.name;G("st").textContent=p.name;G("backbtn").style.display=p.id==="main"?"none":"";var layer=G("layer");layer.innerHTML="";var allObjs=p.objects||[];allObjs.slice().sort(function(a,b){return(+((a.style||{}).z)||0)-(+((b.style||{}).z)||0);}).forEach(function(o){norm(o);if(o.hidden)return;var el=document.createElement("div");el.className="obj "+o.type;el.style.left=o.left;el.style.top=o.top;el.style.width=o.width;el.style.height=o.height;el.style.opacity=o.style.opacity;el.style.fontSize=o.style.font+"cqw";el.style.fontFamily=o.style.ff||"inherit";el.style.zIndex=o.style.z;el.style.transform="rotate("+(o.style.rotate||0)+"deg)";el.style.transformOrigin="left center";el.style.overflow="visible";styleEl(el,o);el.onclick=function(){if(o.targetObj){var t=allObjs.find(function(x){return x.id===o.targetObj;});if(t){openMod(t);return;}}if(o.targetPage){goTo(o.targetPage);return;}if(o.fields&&o.fields.length)openMod(o);};layer.appendChild(el);});var img=G("pimg");img.onload=scaleStage;img.src=p.image||"";if(img.complete&&img.naturalHeight>0)scaleStage();}
+function goTo(id){cid=id;G("psel").value=id;history.replaceState(null,"","?page="+id);renderPg();}
 function openMod(o){
-  G('mt').textContent=o.label||o.type;
-  G('mb').innerHTML='<div style="color:#484f58;font-size:13px;padding:12px 0">Chargement...</div>';
-  G('mbg').classList.add('on');
-  sync('ok','Synchronisé');
-  if(!o.fields||!o.fields.length){G('mb').innerHTML='<div style="color:#484f58;font-style:italic;padding:12px 0">Aucun champ configuré.</div>';return;}
+  G("mt").textContent=o.label||o.type;
+  G("mb").innerHTML='<div style="color:#484f58;padding:12px 0">Chargement...</div>';
+  G("mbg").classList.add("on");sync("ok","Synchronisé");
+  if(!o.fields||!o.fields.length){G("mb").innerHTML='<div style="color:#484f58;font-style:italic;padding:12px 0">Aucun champ.</div>';return;}
   loadObj(cid,o.id,function(saved){buildModal(o,saved);});
 }
-
 function buildModal(o,saved){
-  var mb=G('mb');mb.innerHTML='';
+  var mb=G("mb");mb.innerHTML="";
   o.fields.forEach(function(f){
     var ui=f.ui||{};
-    var savedVal=saved[f.id];
-    var val=(savedVal!=null&&savedVal!=='')?savedVal:(f.value||'');
-    var isPhoto=(f.type==='photo');
-    var isNote=(f.type==='note'||ui.multiline);
-
-    var card=document.createElement('div');
-    card.className='fcard';
-    card.style.borderColor=(ui.accent||'#58a6ff')+'44';
-
-    // label
-    var lbl=document.createElement('div');
-    lbl.className='fcard-lbl';
+    var isGallery=(f.type==="gallery");
+    var isNote=(f.type==="note"||ui.multiline);
+    var card=document.createElement("div");card.className="fcard";
+    card.style.borderColor=(ui.accent||"#58a6ff")+"44";
+    var lbl=document.createElement("div");lbl.className="fcard-lbl";
     if(ui.icon)lbl.innerHTML='<span class="fcard-icon">'+esc(ui.icon)+'</span>';
-    lbl.innerHTML+='<span>'+esc(f.label||'Champ')+'</span>';
+    lbl.innerHTML+='<span>'+esc(f.label||"Champ")+'</span>';
     card.appendChild(lbl);
-
-    if(isPhoto){
-      // hidden file input
-      var fileInp=document.createElement('input');
-      fileInp.type='file';
-      fileInp.accept='image/*';
-      fileInp.capture='environment'; // opens rear camera on mobile
-      fileInp.style.display='none';
-      card.appendChild(fileInp);
-
-      // camera button
-      var camBtn=document.createElement('button');
-      camBtn.className='cam-btn';
-      camBtn.textContent='📷 Prendre / choisir une photo';
-      camBtn.onclick=function(){fileInp.click();};
-      card.appendChild(camBtn);
-
-      // photo preview
-      var preview=document.createElement('img');
-      preview.className='fphoto';
-      preview.style.display=val?'block':'none';
-      if(val)preview.src=val;
-      card.appendChild(preview);
-
-      // handle file selected
-      fileInp.addEventListener('change',async function(){
-        var file=fileInp.files[0];
-        if(!file)return;
-        camBtn.textContent='⏳ Envoi en cours...';
-        camBtn.classList.add('uploading');
-        sync('saving','Upload photo...');
-        try{
-          var url=await uploadToCloudinary(file);
-          f.value=url;
-          saveField(cid,o.id,f.id,url);
-          preview.src=url;
-          preview.style.display='block';
-          camBtn.textContent='📷 Changer la photo';
-          camBtn.classList.remove('uploading');
-          toast('Photo sauvegardée ✓');
-        }catch(err){
-          camBtn.textContent='❌ Erreur — réessayer';
-          camBtn.classList.remove('uploading');
-          sync('error','Erreur upload');
-          toast('Erreur upload — réessayer');
+    if(isGallery){
+      // Gallery field — unlimited photos
+      var galleryPath="condo/"+cid+"/"+o.id+"/gallery_"+f.id;
+      var fi=document.createElement("input");fi.type="file";fi.accept="image/*";fi.capture="environment";fi.style.display="none";
+      card.appendChild(fi);
+      var addBtn=document.createElement("button");addBtn.className="cam-btn";addBtn.textContent="📷 Ajouter une photo";
+      addBtn.onclick=function(){fi.click();};
+      card.appendChild(addBtn);
+      var grid=document.createElement("div");grid.className="gallery-grid";
+      card.appendChild(grid);
+      // load existing photos from firebase
+      get(ref(db,galleryPath)).then(function(snap){
+        if(snap.exists()){
+          var photos=snap.val();
+          Object.keys(photos).forEach(function(key){
+            addGalleryThumb(grid,galleryPath,key,photos[key]);
+          });
         }
       });
-
+      fi.addEventListener("change",async function(){
+        var file=fi.files[0];if(!file)return;
+        addBtn.textContent="⏳ Envoi...";addBtn.classList.add("uploading");
+        sync("saving","Upload photo...");
+        try{
+          var url=await uploadPhoto(file);
+          var newRef=push(ref(db,galleryPath));
+          await set(newRef,url);
+          addGalleryThumb(grid,galleryPath,newRef.key,url);
+          addBtn.textContent="📷 Ajouter une photo";addBtn.classList.remove("uploading");
+          sync("ok","Synchronisé ✓");toast("Photo ajoutée ✓");
+        }catch(e){
+          addBtn.textContent="❌ Erreur — réessayer";addBtn.classList.remove("uploading");
+          sync("error","Erreur upload");
+        }
+        fi.value="";
+      });
     } else {
-      // regular input
+      var sv=saved[f.id];var val=(sv!=null&&sv!=="")? sv:(f.value||"");
       var inp;
-      if(isNote){
-        inp=document.createElement('textarea');
-        inp.className='finput';
-        inp.value=val;
-        inp.placeholder=ui.placeholder||'';
-      } else if(f.type==='checkbox'){
-        inp=document.createElement('select');
-        inp.className='finput';
-        inp.innerHTML='<option value=""'+((!val)?' selected':'')+'>—</option><option value="oui"'+(val==='oui'?' selected':'')+'>Oui</option><option value="non"'+(val==='non'?' selected':'')+'>Non</option>';
-      } else {
-        inp=document.createElement('input');
-        inp.className='finput';
-        inp.value=val;
-        inp.placeholder=ui.placeholder||'';
-        if(f.type==='number'||f.type==='dimension')inp.inputMode='decimal';
-      }
+      if(isNote){inp=document.createElement("textarea");inp.className="finput";inp.value=val;inp.placeholder=ui.placeholder||"";}
+      else if(f.type==="checkbox"){inp=document.createElement("select");inp.className="finput";inp.innerHTML='<option value="">—</option><option value="oui"'+( val==="oui"?" selected":"")+'>Oui</option><option value="non"'+( val==="non"?" selected":"")+'>Non</option>';}
+      else{inp=document.createElement("input");inp.className="finput";inp.value=val;inp.placeholder=ui.placeholder||"";if(f.type==="number"||f.type==="dimension")inp.inputMode="decimal";}
       card.appendChild(inp);
-      if(ui.unit){var u=document.createElement('div');u.className='funit';u.textContent=ui.unit;card.appendChild(u);}
-      var dbt=null;
-      function makeDoSave(field,input){
-        return function(){var v=input.value||'';field.value=v;saveField(cid,o.id,field.id,v);};
-      }
-      var doSave=makeDoSave(f,inp);
-      inp.addEventListener('input',function(){sync('saving','Frappe...');clearTimeout(dbt);dbt=setTimeout(doSave,800);});
-      inp.addEventListener('change',doSave);
-      inp.addEventListener('blur',function(){clearTimeout(dbt);doSave();});
+      if(ui.unit){var u=document.createElement("div");u.className="funit";u.textContent=ui.unit;card.appendChild(u);}
+      (function(field,input){var dbt=null;function doSave(){var v=input.value||"";field.value=v;saveField(cid,o.id,field.id,v);}input.addEventListener("input",function(){sync("saving","Frappe...");clearTimeout(dbt);dbt=setTimeout(doSave,800);});input.addEventListener("change",doSave);input.addEventListener("blur",function(){clearTimeout(dbt);doSave();});})(f,inp);
     }
-
     mb.appendChild(card);
   });
 }
-
-G('mclose').onclick=function(){G('mbg').classList.remove('on');};
-G('mbg').addEventListener('click',function(e){if(e.target===G('mbg'))G('mbg').classList.remove('on');});
-
-function init(){
-  var sv=new URLSearchParams(location.search).get('page');
-  if(sv&&D.pages.find(function(p){return p.id===sv;}))cid=sv;
-  G('psel').innerHTML=D.pages.map(function(p){return'<option value="'+p.id+'">'+esc(p.name)+'</option>';}).join('');
-  G('psel').value=cid;
-  G('psel').onchange=function(){goTo(G('psel').value);};
-  G('backbtn').onclick=function(){goTo('main');};
-  window.addEventListener('resize',scaleStage);
-  if(!navigator.onLine)G('offbar').classList.add('on');
-  renderPg();
+function addGalleryThumb(grid,galleryPath,key,url){
+  var item=document.createElement("div");item.className="gallery-item";
+  var img=document.createElement("img");img.src=url;img.alt="photo";
+  var del=document.createElement("button");del.className="gallery-del";del.textContent="✕";
+  del.onclick=function(){if(!confirm("Supprimer cette photo?"))return;remove(ref(db,galleryPath+"/"+key));item.remove();sync("ok","Photo supprimée");};
+  item.appendChild(img);item.appendChild(del);grid.appendChild(item);
 }
+G("mclose").onclick=function(){G("mbg").classList.remove("on");};
+G("mbg").addEventListener("click",function(e){if(e.target===G("mbg"))G("mbg").classList.remove("on");});
+function init(){var sv=new URLSearchParams(location.search).get("page");if(sv&&D.pages.find(function(p){return p.id===sv;}))cid=sv;G("psel").innerHTML=D.pages.map(function(p){return'<option value="'+p.id+'">'+esc(p.name)+'</option>';}).join("");G("psel").value=cid;G("psel").onchange=function(){goTo(G("psel").value);};G("backbtn").onclick=function(){goTo("main");};window.addEventListener("resize",scaleStage);if(!navigator.onLine)G("offbar").classList.add("on");renderPg();}
 init();
-</script>
-</body></html>
+</script></body></html>
