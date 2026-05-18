@@ -152,6 +152,8 @@ function buildModal(o,saved){
 function addGalleryThumb(grid,galleryPath,key,url){
   var item=document.createElement("div");item.className="gallery-item";
   var img=document.createElement("img");img.src=url;img.alt="photo";
+img.style.cursor="pointer";
+img.onclick=function(){window.open(url,"_blank");};
   var del=document.createElement("button");del.className="gallery-del";del.textContent="✕";
   del.onclick=function(){if(!confirm("Supprimer cette photo?"))return;remove(ref(db,galleryPath+"/"+key));item.remove();sync("ok","Photo supprimée");};
   item.appendChild(img);item.appendChild(del);grid.appendChild(item);
