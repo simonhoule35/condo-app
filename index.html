@@ -153,7 +153,16 @@ function addGalleryThumb(grid,galleryPath,key,url){
   var item=document.createElement("div");item.className="gallery-item";
   var img=document.createElement("img");img.src=url;img.alt="photo";
 img.style.cursor="pointer";
-img.onclick=function(){window.open(url,"_blank");};
+img.onclick=function(){
+  var lb=document.createElement("div");
+  lb.style.cssText="position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px";
+  var pic=document.createElement("img");
+  pic.src=url;
+  pic.style.cssText="max-width:100%;max-height:100%;border-radius:10px;object-fit:contain";
+  lb.appendChild(pic);
+  lb.onclick=function(){lb.remove();};
+  document.body.appendChild(lb);
+};
   var del=document.createElement("button");del.className="gallery-del";del.textContent="✕";
   del.onclick=function(){if(!confirm("Supprimer cette photo?"))return;remove(ref(db,galleryPath+"/"+key));item.remove();sync("ok","Photo supprimée");};
   item.appendChild(img);item.appendChild(del);grid.appendChild(item);
