@@ -357,14 +357,12 @@ document.getElementById('fileInput').addEventListener('change', async e => {
   const empty = document.getElementById('detail-empty-icon');
   const up    = document.getElementById('detail-uploading');
 
-  // Show local preview immediately
-  const localUrl = URL.createObjectURL(file);
-  img.src = localUrl; img.style.display='block'; empty.style.display='none';
+  // Show spinner, wait for Cloudinary — no local preview
   up.style.display = 'flex';
 
   try {
     const url = await uploadPhoto(file);
-    img.src = url;
+    img.src = url; img.style.display='block'; empty.style.display='none';
     // If editing existing sheet, save photo immediately
     if (currentSheet) {
       await set(ref(db,'glass/sheets/'+currentSheet+'/photo'), url);
